@@ -27,7 +27,7 @@ function App() {
     setPostList(filterdPosts);
   }
   return (
-    <div className="App">
+    <div style={{fontFamily:'sans-serif'}} className="App">
       <PostList users={users} posts={postList} removePost={removePost}/>
     </div>
   );

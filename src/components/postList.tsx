@@ -10,7 +10,7 @@ export default function PostList({ posts, users, removePost }: Props) {
     <>
       {posts.map((post) => {
         return (
-          <div key={post.id}>
+          <div key={post.id} style={{maxWidth:'500px'}}>
             <Post post={post} users={users} removePost={removePost}/>
           </div>
         );
