@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import Post from "../components/Interfaces";
 class PostService {
   http = axios.create({
     baseURL: "https://jsonplaceholder.typicode.com",
@@ -10,16 +10,17 @@ class PostService {
   }
   async removePost(userId: number) {
     const response = this.http.delete("/posts/" + userId);
+    return response;
   }
-  async addPost(userId: number, title: string, body: string) {
+  async addPost(post: Post) {
     const randomId = Math.floor(Math.random() * 10000);
-    const post: { id: number; userId: number; title: string; body: string } = {
+    const newPost: Post = {
       id: randomId,
-      userId: userId,
-      title: title,
-      body: body,
+      userId: post.userId,
+      title: post.title,
+      body: post.body,
     };
-    const response = this.http.post("/posts/" + userId, post);
+    const response = this.http.post("/posts/" + post.userId, newPost);
     return response;
   }
 }
