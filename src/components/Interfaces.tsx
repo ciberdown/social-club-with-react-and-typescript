@@ -1,6 +1,6 @@
-export default interface Post {
+export default interface PostInterface {
   userId: number;
-  id?: number;
+  id: number;
   title: string;
   body: string;
 }
@@ -17,6 +17,7 @@ export interface Company {
   bs: string;
 }
 export interface User {
+  id: number;
   name: string;
   username: string;
   email: string;

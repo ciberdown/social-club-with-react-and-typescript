@@ -6,7 +6,7 @@ class UserService {
     baseURL: "https://jsonplaceholder.typicode.com/",
   });
   async getUsers() {
-    const response = await this.http.get("posts");
+    const response = await this.http.get("/users");
     return response.data;
   }
   async addUser(user: User) {
@@ -19,3 +19,4 @@ class UserService {
     return response.data;
   }
 }
+export default new UserService;

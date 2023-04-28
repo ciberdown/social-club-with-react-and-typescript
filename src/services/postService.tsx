@@ -9,7 +9,7 @@ class PostService {
     return response.data;
   }
   async removePost(userId: number) {
-    const response = this.http.delete("/posts/" + userId);
+    const response =await this.http.delete("/posts/" + userId);
     return response;
   }
   async addPost(post: Post) {
@@ -24,3 +24,4 @@ class PostService {
     return response;
   }
 }
+export default new PostService;
